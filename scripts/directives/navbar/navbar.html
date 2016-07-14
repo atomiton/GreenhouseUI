@@ -1,0 +1,119 @@
+<div class="navbar-wrapper ">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarMain"
+                aria-expanded="false" aria-controls="navbarMain">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand image-brand" ng-href="{{$root.topBarPaths.home.path()}}"><img
+          src="template/images/logo.png"></a>
+        <a class="navbar-brand hidden-xs" ng-href="{{$root.topBarPaths.home.path()}}">SMART GREENHOUSE</a>
+      </div>
+      <div id="navbarMain" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <!--<li><a ng-href="#/p2">p2</a></li>-->
+
+          <!--<li class="dropdown">-->
+          <!--<a class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
+          <!--<ul class="dropdown-menu">-->
+          <!--<li><a href="#">Action</a></li>-->
+          <!--</ul>-->
+          <!--</li>-->
+          <li class="notification">
+            <a href="" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false"><i class="fa fa-bell"></i><span class="badge">0</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">No Message</a></li>
+              <!--<li class="active"><a href="#">Another action</a></li>-->
+              <!--<li><a href="#">Something else here</a></li>-->
+            </ul>
+          </li>
+          <li class="mini-user">
+            <a href="" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+              <span class="avatar">
+                <img src="template/images/unknow.png" alt=""/>
+              </span>
+              {{$root.user.profile?($root.user.profile.firstName + " " + $root.user.profile.lastName|uppercase):'GUEST'}}</a>
+            <ul class="dropdown-menu">
+              <li><a href="#/configurator">Configuration</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-default navbar-sub md-whiteframe-2dp">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1"
+              aria-expanded="false" aria-controls="navbar1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbar1" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <!--<li class="active"><a href="#">Greenhouse</a></li>-->
+        <!--<li><a href="#">Zones/Plants</a></li>-->
+        <!--<li><a href="#">Reports</a></li>-->
+        <li ng-repeat="path in $root.topBarPaths.paths" ng-class="{ active: $root.isActive(path.path(params))}"><a
+          ng-href="{{path.path(params)}}">{{path.title}}</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="$root.hasGreenHouseSelect(params)">
+          <a href="">
+            <span>Green House</span>
+            <select class="selectpicker" ng-model="$root.allData.selectedGreenhouseId" data-size="10">
+              <option ng-repeat="gh in $root.allData.greenhouses" value="{{gh.GreenhouseID}}">{{gh.GreenhouseName}}
+              </option>
+            </select>
+          </a>
+        </li>
+        <li ng-show="$root.hasZoneSelect(params)">
+          <a href="">
+            <span>Zone</span>
+
+            <select class="selectpicker" ng-model="$root.allData.selectedZoneId" data-size="15">
+              <optgroup label="{{lane.LaneName}}" ng-repeat="lane in $root.allData.lanes track by $index">
+                <option ng-repeat="zone in lane.zones track by zone.ZoneID" value="{{zone.ZoneID}}">
+                  {{lane.LaneName + " - "+zone.ZoneName}}
+                </option>
+              </optgroup>
+            </select>
+            <!--<select class="selectpicker" ng-model="selectedZone">-->
+            <!--<option ng-repeat="zone in zones" value="{{zone.ZoneID}}">{{zone.ZoneName}}</option>-->
+            <!--</select>-->
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </nav>
+  <!--<nav class="navbar navbar-default navbar-sub navbar-sub1 md-whiteframe-2dp" ng-if="$root.hasSubBar()">-->
+  <!--<div class="navbar-header">-->
+  <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1"-->
+  <!--aria-expanded="false" aria-controls="navbar1">-->
+  <!--<span class="sr-only">Toggle navigation</span>-->
+  <!--<span class="icon-bar"></span>-->
+  <!--<span class="icon-bar"></span>-->
+  <!--<span class="icon-bar"></span>-->
+  <!--</button>-->
+  <!--</div>-->
+  <!--<div id="navbar1" class="navbar-collapse collapse">-->
+  <!--&lt;!&ndash;<ul class="nav navbar-nav">&ndash;&gt;-->
+  <!--&lt;!&ndash;<li><a href="#">Internal Status</a></li>&ndash;&gt;-->
+  <!--&lt;!&ndash;<li><a href="#">External Conditions</a></li>&ndash;&gt;-->
+  <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+
+  <!--</div>-->
+  <!--/.nav-collapse -->
+  </nav>
+</div>

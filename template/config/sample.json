@@ -1,0 +1,18 @@
+{
+  Greenhouses: [
+    {
+      GreenHouseName: "GH1",
+      Location: {
+        lat: "111",
+        lng: 111
+      },
+      ZonesPerLane: 10,
+      Lanes: [
+        {
+          LaneName: "Lane 1",
+          CropType: "Tomato",
+        }
+      ]
+    }
+  ]
+}

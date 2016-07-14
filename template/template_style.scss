@@ -1,0 +1,42 @@
+/*
+* @author: Nam Phan, 2016
+* Template: Green House
+*/
+/*====font====*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,100,100italic,500,500italic,400italic,700,700italic,900,900italic);
+
+/*====color====*/
+
+$cl_main_1: #292f38;
+$cl_main_2: #222831;
+$cl_main_3: #272d35;
+$cl_main_4: #39404a;
+$cl_main_5: #da343a;
+
+$cl_border_1: #5f6670;
+
+$cl_nav_text: #6a6e74;
+
+$cl_text_1: #b4b7b9;
+$cl_text_2: #7d838e;
+$cl_text_3: #656565;
+$cl_text_4: #bfc9d9;
+$cl_text_5: #215ea8;
+
+$cl_title_1: #ffffff;
+
+//heat range
+
+$cl_heat_map: #0c1c57, #253493, #215ea8,
+#3491bf, #4cb6c4, #7eccba,
+#c6e8b3, #ecf7b0, #fcfcd8, #fff;
+//main
+$cl_bg_main: #16191e;
+$cl_bg_sub1: #f5f5f5;
+
+$template_images: (
+  path: "../template/images/",
+  logo: "logo.png",
+  background_1: "bg1.png"
+);
+

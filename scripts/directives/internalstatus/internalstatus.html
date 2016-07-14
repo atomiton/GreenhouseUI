@@ -1,0 +1,160 @@
+<div>
+  <div class="header md-whiteframe-2dp">Internal Status</div>
+  <div class="panel md-whiteframe-5dp panel-internal">
+    <div class="panel-heading">
+      Greenhouse
+      <!--<i class="icon-greenhouse"></i>-->
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="sensor-vector">
+            <span class="icon-sensor-vector">
+              <!--<b class="count">{{defaultData.temperature | number:0}}</b>-->
+              <i class="icon-sensor-vector-meter" style="transform: rotate({{scale.temperature}}deg)"></i>
+            </span>
+
+            <div class="title">
+              ({{(defaultData.temperature | number:2)||'N/A'}} &deg;C)
+              <br>
+              Temperature
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="sensor-vector">
+            <span class="icon-sensor-vector">
+              <!--<b class="count">{{defaultData.humidity | number:0}}</b>-->
+              <i class="icon-sensor-vector-meter" style="transform: rotate({{scale.humidity}}deg)"></i>
+            </span>
+
+            <div class="title">
+              ({{(defaultData.humidity | number:2)||'N/A'}} %)
+              <br>
+              Humidity
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="sensor-vector">
+            <span class="icon-sensor-vector">
+              <!--<b class="count">{{defaultData.light | number:0}}</b>-->
+              <i class="icon-sensor-vector-meter" style="transform: rotate({{scale.light}}deg)"></i>
+            </span>
+
+            <div class="title">
+              ({{(defaultData.light | number:2)||'N/A'}} lux)
+              <br>
+              Amb. light
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="sensor-vector">
+            <span class="icon-sensor-vector">
+              <!--<b class="count">{{defaultData.soilMoisture | number:0}}</b>-->
+              <i class="icon-sensor-vector-meter" style="transform: rotate({{scale.soilMoisture}}deg)"></i>
+            </span>
+
+            <div class="title">
+              ({{(defaultData.soilMoisture | number:0)||'N/A'}} cb)
+              <br>
+              Soil moisture
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel md-whiteframe-5dp panel-internal">
+    <div class="panel-heading">
+      Plantation
+      <i class="icon-soil-color"></i>
+    </div>
+    <div class="panel-body">
+      <!--<table class="table">-->
+      <!--<tbody>-->
+      <!--<tr>-->
+      <!--<td>-->
+      <!--<ul class="list-unstyled">-->
+      <!--<li>{{defaultData.plantation.zoneCount}} zones</li>-->
+      <!--<li ng-repeat="type in defaultData.plantation.types">-->
+      <!--{{type.count}} {{type.name}}-->
+      <!--</li>-->
+      <!--</ul>-->
+      <!--</td>-->
+      <!--<td>-->
+      <!--<div id="plantationChart" style="width: 100%;"></div>-->
+      <!--</td>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+      <!--</table>-->
+      <div class="row pie-chart-group">
+
+        <div class="col-xs-12 col-lg-6 col-lg-push-6">
+          <!--<i class="icon-pie-chart"></i>-->
+          <div id="plantationChart" style="width: 100%;"></div>
+        </div>
+        <div class="col-xs-12 col-lg-6 col-lg-pull-6 text-center-not-lg content-group">
+          <div class="table">
+            <ul class="list-unstyled">
+              <li>{{defaultData.plantation.zoneCount||'N/A'}} zones</li>
+              <li ng-repeat="type in defaultData.plantation.types">
+                {{type.count||'N/A'}} {{type.name}}
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel md-whiteframe-5dp panel-internal">
+    <div class="panel-heading">
+      Irrigation
+      <i class="icon-irrigation-color"></i>
+    </div>
+    <div class="panel-body">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar"
+             aria-valuenow="{{irrigation.on/(irrigation.on+irrigation.off)*100}}" aria-valuemin="0"
+             aria-valuemax="100"
+             style="width: {{irrigation.on/(irrigation.on+irrigation.off)*100}}%;">
+          <span class="sr-only">{{irrigation.on/(irrigation.on+irrigation.off)*100}}% Complete</span>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-xs-6">{{irrigation.on}} on(s)</div>
+        <div class="col-xs-6">{{irrigation.off}} off(s)</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel md-whiteframe-5dp panel-internal">
+    <div class="panel-heading">
+      Heating
+      <i class="icon-heater"></i>
+    </div>
+    <div class="panel-body">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{heaters.on/(heaters.on+heaters.off)*100}}"
+             aria-valuemin="0" aria-valuemax="100"
+             style="width: {{heaters.on/(heaters.on+heaters.off)*100}}%;">
+          <span class="sr-only">{{heaters.on/(heaters.on+heaters.off)*100}}% Complete</span>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-xs-6">{{heaters.on}} on(s)</div>
+        <div class="col-xs-6">{{heaters.off}} off(s)</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel md-whiteframe-5dp panel-internal">
+    <div class="panel-heading">
+      Energy Use
+      <i class="icon-light-color"></i>
+    </div>
+    <div class="panel-body">
+
+    </div>
+  </div>
+</div>

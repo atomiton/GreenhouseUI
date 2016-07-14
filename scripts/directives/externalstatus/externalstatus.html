@@ -1,0 +1,18 @@
+<div>
+  <div class="header md-whiteframe-2dp">External Conditions</div>
+  <ul class="list-inline">
+    <li><i class="icon-camera-sun-light"></i>Sunlight <span
+      class="count">{{(defaultData.light | number:2)||'N/A'}}</span>
+    </li>
+    <li><i class="icon-camera-temperature"></i>Temperature <span
+      class="count">{{(defaultData.temperature | number:2)||'N/A'}}</span>&deg;C
+    </li>
+    <li><i class="icon-camera-humidity"></i>Humidity <span
+      class="count">{{(defaultData.humidity | number:2)||'N/A'}}</span>%
+    </li>
+    <li><i class="icon-camera-wind"></i>Wind <span class="count">{{(defaultData.wind | number:2)||'N/A'}}</span>mph
+    </li>
+    <!--<li><i class="icon-camera-logitude"></i>Location Long: -75°45’52’’ Lat: 43°66’06’’</li>-->
+    <li><i class="icon-camera-logitude"></i>Location Lng: {{defaultData.longitude || 'N/A'}} Lat: {{defaultData.latitude || 'N/A'}}</li>
+  </ul>
+</div>

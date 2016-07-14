@@ -1,0 +1,23 @@
+<div>
+  <div class="panel-heading">
+    DEVICES
+    <div class="icon-collapse inverse text-right">
+      <md-button class="md-fab md-mini" aria-label="trigger collapse" data-toggle="collapse"
+                 data-target="#deviceListCollapse" aria-expanded="true"
+                 ng-click="$deviceListCollapse = !$deviceListCollapse">
+        {{$deviceListCollapse?'+':'-'}}
+      </md-button>
+    </div>
+  </div>
+  <div class="collapse in" id="deviceListCollapse">
+    <div class="panel-body">
+      <ul class="list-unstyled">
+        <li ng-repeat="(key,value) in defaultData">
+          <div class="circle-small {{value.circle_class}}"><i class="{{value.icon_class}}"></i></div>
+          {{key}} - {{value.count}}
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
